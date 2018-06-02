@@ -9,7 +9,7 @@ class LineItemsController < ApplicationController
     end
     @cart.add_item(@piece.id)
     @cart.save
-    current_user.save #todo email validation issue?
+    current_user.save
     redirect_to cart_path(@cart)
   end
 end

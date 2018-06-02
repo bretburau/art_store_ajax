@@ -1,7 +1,8 @@
 class CartsController < ApplicationController
   def show
+    # raise current_user.current_cart.inspect
     redirect_to root_path if !logged_in?
-    @cart = current_user.current_cart unless !logged_in?
+    @cart = Cart.find(params[:id])#current_user.current_cart unless !logged_in?
   end
 
   def checkout
