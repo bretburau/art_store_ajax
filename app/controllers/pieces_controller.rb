@@ -11,6 +11,7 @@ class PiecesController < ApplicationController
       @pieces = Artist.find(params[:artist_id]).pieces
     else
       @pieces = Piece.all
+      render json: @pieces
     end
   end
 
