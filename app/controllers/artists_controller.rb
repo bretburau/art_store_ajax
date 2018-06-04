@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
   before_action :get_artist, only: [:show, :reports]
 
   def show
+    render json: @artist, status: 200
   end
 
   def reports

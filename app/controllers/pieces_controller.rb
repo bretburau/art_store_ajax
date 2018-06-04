@@ -16,6 +16,8 @@ class PiecesController < ApplicationController
   end
 
   def show
+    # render json: @piece.to_json(only: [:name, :prints_available, :original_available, :price], include:[artist: {only: [:id, :name]}])
+    render json: @piece
   end
 
   def create

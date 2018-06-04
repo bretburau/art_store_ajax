@@ -1,3 +1,4 @@
 class PieceSerializer < ActiveModel::Serializer
-  attributes :id, :prints_available, :original_available, :price
+  attributes :id, :name
+  belongs_to :artist
 end
