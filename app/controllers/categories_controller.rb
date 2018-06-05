@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    render json: @category
   end
   
   def new

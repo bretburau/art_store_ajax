@@ -19,9 +19,11 @@ function displayCategories(categories) {
   $('#contentDiv').empty().append(newContent)
 }
 
-function loadCategory(e) {
-  console.log('firing')
+function loadCategory(id) {
+  $.get(`/categories/${id}`, displayCategory)
+}
+
+function displayCategory(category) {
+  newContent = `<h2>Pieces in category ${category.name}</h2>`
   debugger;
-  e.preventDefault()
-  $.get('/categories/')
 }
