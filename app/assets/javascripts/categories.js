@@ -10,9 +10,9 @@ function loadCategoires(e){
 }
 
 function displayCategories(categories) {
-  newContent = `<ul>`
+  newContent = `<h2>Categories:</h2><ul>`
   categories.forEach((category) => {
-    newContent += `<li>${category.name}</li>`
+    newContent += `<li><a href='/categories/${category.id}'>${category.name}</a></li>`
   });
   newContent += `</ul>`
   console.log(newContent)
