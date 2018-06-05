@@ -1,8 +1,9 @@
 $(document).ready(function(){
   $('#categories-link').on('click', loadCategoires)
+  // $('.category-link').on('click', loadCategory)
 });
 
-let newContent;
+let newContent; //Why is this here? TODO
 
 function loadCategoires(e){
   e.preventDefault()
@@ -12,9 +13,15 @@ function loadCategoires(e){
 function displayCategories(categories) {
   newContent = `<h2>Categories:</h2><ul>`
   categories.forEach((category) => {
-    newContent += `<li><a href='/categories/${category.id}'>${category.name}</a></li>`
+    newContent += `<li><a href='#' onclick=loadCategory(${category.id})>${category.name}</a></li>`
   });
   newContent += `</ul>`
-  console.log(newContent)
   $('#contentDiv').empty().append(newContent)
+}
+
+function loadCategory(e) {
+  console.log('firing')
+  debugger;
+  e.preventDefault()
+  $.get('/categories/')
 }
