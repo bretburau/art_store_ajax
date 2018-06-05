@@ -25,5 +25,13 @@ function loadCategory(id) {
 
 function displayCategory(category) {
   newContent = `<h2>Pieces in category ${category.name}</h2>`
-  debugger;
+  if(category.pieces.length === 0) {
+    newContent += `<p>No pieces in the category yet...</p>`
+  } else {
+    category.pieces.forEach(function(piece){
+      newContent += `<li><a href='/pieces/${piece.id}'>${piece.name}</a></li>`
+    })
+  }
+  $('#contentDiv').empty().append(newContent)
+  // debugger;
 }
