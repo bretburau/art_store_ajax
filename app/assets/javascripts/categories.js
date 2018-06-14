@@ -12,7 +12,7 @@ function loadCategoires(e){
 function displayCategories(categories) {
   newContent = `<h2>Categories:</h2><ul>`
   categories.forEach((category) => {
-    newContent += `<li><a data-id='${category.id}' href='#'>${category.name}</a></li>`
+    newContent += `<li><a class='btn btn-secondary' data-id='${category.id}' href='#'>${category.name}</a></li>`
   });
   newContent += `</ul>`
   $('#contentDiv').empty().append(newContent)
@@ -30,10 +30,7 @@ function addListenersToCategories(){
 }
 
 function loadCategory(id) {
-  $.get(`/categories/${id}`, function(e){
-    e.preventDefault();
-    displayCategory
-  })
+  $.get(`/categories/${id}`, displayCategory)
 }
 
 function displayCategory(category) {
@@ -41,16 +38,18 @@ function displayCategory(category) {
   if(category.pieces.length === 0) {
     newContent += `<p>No pieces in the category yet...</p>`
   } else {
+      newContent += '<ul>'
     category.pieces.forEach(function(piece){
-      newContent += `<li><a onclick='loadPiece(${piece.id})' href='#'>${piece.name}</a></li>`
+      newContent += `<li><a class='btn btn-secondary' onclick='loadPiece(${piece.id})' href='#'>${piece.name}</a></li>`
     })
+    newContent += '</ul>'
   }
   $('#contentDiv').empty().append(newContent)
 }
 
 function loadPiece(id){
   $.get(`/pieces/${id}`, function(resp){
-    debugger;
+    alert('needs doing') 
   })
 }
 
