@@ -1,6 +1,6 @@
-$(document).ready(function(){
-  $('#categories-link').on('click', loadCategoires)
-});
+  $(document).ready(function(){
+    $('#categories-link').on('click', loadCategoires)
+  });
 
 let newContent; //Why is this here? TODO
 

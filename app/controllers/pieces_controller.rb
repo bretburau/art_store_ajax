@@ -11,7 +11,7 @@ class PiecesController < ApplicationController
       @pieces = Artist.find(params[:artist_id]).pieces
     else
       @pieces = Piece.all
-      # render json: @pieces
+      render json: @pieces
     end
   end
 
