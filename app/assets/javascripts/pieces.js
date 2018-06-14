@@ -12,4 +12,5 @@ function displayPieces(pieces){
   pieces.forEach((piece) => {
     newContent += `<li><a class='btn btn-secondary' data-id='${piece.id}' href='#'>${piece.name}</a></li>`
   })
+  newContent += '</ul>'
 }
