@@ -2,6 +2,10 @@ class PiecesController < ApplicationController
   before_action :get_piece, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+  def home
+    @pieces = Piece.all
+  end
+
   def new
     @piece = Piece.new
   end
@@ -16,7 +20,6 @@ class PiecesController < ApplicationController
   end
 
   def show
-    # render json: @piece.to_json(only: [:name, :prints_available, :original_available, :price], include:[artist: {only: [:id, :name]}])
     render json: @piece
   end
 
