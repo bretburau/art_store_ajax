@@ -10,8 +10,9 @@ function loadArtists(e){
 }
 
 function displayArtists(artists) {
+  console.log(artists)
   newContent = `<h2>Artists:</h2><ul>`
-  Artists.forEach((artist) => {
+  artists.forEach((artist) => {
     newContent += `<li><a class='btn btn-secondary' data-id='${artist.id}' href='#'>${artist.name}</a></li>`
   });
   newContent += `</ul>`

@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
   end
 
   def index
+    render json: Artist.all
   end
 
 
