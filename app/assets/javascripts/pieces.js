@@ -38,12 +38,16 @@ function loadPiece(id){
       <img src='assets/placeholder.png' alt='${resp.name}' class='image-large'>
     </div>
     <h3>Categories:</h3>
+    <ul>
     `
-    resp.categories.forEach(addCategoryList)
+    resp.categories.forEach((category) => {
+      newContent += `
+          <li>
+            ${category.name}
+          </li>
+      `
+    })
+    newContent += '</ul>'
     $('#contentDiv').empty().append(newContent)
   })
-}
-
-function addCategoryList() {
-  debugger;
 }
