@@ -37,7 +37,13 @@ function loadPiece(id){
       <p>${resp.artist.name}</p>
       <img src='assets/placeholder.png' alt='${resp.name}' class='image-large'>
     </div>
+    <h3>Categories:</h3>
     `
+    resp.categories.forEach(addCategoryList)
     $('#contentDiv').empty().append(newContent)
   })
+}
+
+function addCategoryList() {
+  debugger;
 }
