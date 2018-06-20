@@ -54,15 +54,19 @@ function loadPiece(id){
     })
     newContent += '</ul>'
     newContent += `
-      <form id='addCategory' method='POST'>
+      <form action="" method='POST'>
       Add a new category:<input type='text' name='categoryName'>
       <input type='submit' value='Create'>
       </form>
     `
     $('#contentDiv').empty().append(newContent)
+    addFormSubmitListener();
   })
-  $('#addCategory').submit(function(e){
+}
+
+function addFormSubmitListener() {
+  $('form').submit(function(e){
     e.preventDefault();
-    alert('form')
+    
   })
 }
