@@ -42,9 +42,10 @@ function displayArtist(artist) {
   } else {
       newContent += '<ul>'
     artist.pieces.forEach(function(piece){
-      newContent += `<li><a class='btn btn-secondary' onclick='loadPiece(${piece.id})' href='#'>${piece.name}</a></li>`
+      newContent += `<li><a class='btn btn-secondary' data-id='${piece.id}' onclick='loadPiece(${piece.id})' href='#'>${piece.name}</a></li>`
     })
     newContent += '</ul>'
   }
   $('#contentDiv').empty().append(newContent)
+  addListenersToPieces();
 }

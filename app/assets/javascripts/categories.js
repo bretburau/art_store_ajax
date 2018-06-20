@@ -40,16 +40,10 @@ function displayCategory(category) {
   } else {
       newContent += '<ul>'
     category.pieces.forEach(function(piece){
-      newContent += `<li><a class='btn btn-secondary' onclick='loadPiece(${piece.id})' href='#'>${piece.name}</a></li>`
+      newContent += `<li><a class='btn btn-secondary' data-id='${piece.id}' href='#'>${piece.name}</a></li>`
     })
     newContent += '</ul>'
   }
   $('#contentDiv').empty().append(newContent)
+  addListenersToPieces();
 }
-
-function loadPiece(id){
-  $.get(`/pieces/${id}`, function(resp){
-    alert('needs doing') 
-  })
-}
-
