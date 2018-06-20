@@ -43,7 +43,7 @@ function loadPiece(id){
       <img src='assets/placeholder.png' alt='${resp.name}' class='image-large'>
     </div>
     <h3>Categories:</h3>
-    <ul>
+    <ul id='categories'>
     `
     resp.categories.forEach((category) => {
       newContent += `
@@ -70,7 +70,7 @@ function addFormSubmitListener() {
     let values = $(this).serialize();
     let posting = $.post('/categories', values)
     posting.done(function(data){
-
+      $('#categories').append(`<li>${data.name}</li>`)
     })
   })
 }

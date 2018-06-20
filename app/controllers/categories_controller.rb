@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     @category.save
-    redirect_to category_path(@category)
+    render json: @category, status: 201
   end
 
   def edit
