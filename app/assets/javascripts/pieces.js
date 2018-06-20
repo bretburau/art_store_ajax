@@ -1,7 +1,12 @@
 $(document).ready(function(){
   $('#pieces-link').on('click', loadPieces)
+  
   //TODO clicking home button on nav looses event binding
 });
+
+function addCategorytoPieces(){
+  debugger;
+}
 
 function loadPieces(e){
   e.preventDefault()
@@ -48,6 +53,16 @@ function loadPiece(id){
       `
     })
     newContent += '</ul>'
+    newContent += `
+      <form id='addCategory' method='POST'>
+      Add a new category:<input type='text' name='categoryName'>
+      <input type='submit' value='Create'>
+      </form>
+    `
     $('#contentDiv').empty().append(newContent)
+  })
+  $('#addCategory').submit(function(e){
+    e.preventDefault();
+    alert('form')
   })
 }
