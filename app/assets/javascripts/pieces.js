@@ -55,7 +55,7 @@ function loadPiece(id){
     newContent += '</ul>'
     newContent += `
       <form action="" method='POST'>
-      Add a new category:<input type='text' name='categoryName'>
+      Add a new category:<input type='text' name='category[name]'>
       <input type='submit' value='Create'>
       </form>
     `
@@ -67,6 +67,10 @@ function loadPiece(id){
 function addFormSubmitListener() {
   $('form').submit(function(e){
     e.preventDefault();
-    
+    let values = $(this).serialize();
+    let posting = $.post('/categories', values)
+    posting.done(function(data){
+
+    })
   })
 }
