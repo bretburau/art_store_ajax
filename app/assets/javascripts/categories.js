@@ -47,3 +47,11 @@ function displayCategory(category) {
   $('#contentDiv').empty().append(newContent)
   addListenersToPieces();
 }
+
+class Category {
+  constructor(name) {
+    this.name = name;
+  }
+
+  
+}
