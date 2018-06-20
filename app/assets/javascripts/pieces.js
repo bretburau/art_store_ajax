@@ -20,12 +20,6 @@ function displayPieces(pieces){
 
 function addListenersToPieces(){
   let allLinks = $('a[data-id]')
-  // allLinks.each((linkId) => {
-  //   $(`a[data-id='${linkId + 1}']`).on('click', function(e) {
-  //     e.preventDefault()
-  //     loadPiece(linkId + 1)
-  //   })
-  // })
   for (i = 0; i < allLinks.length; ++i) {
     let linkId = allLinks[i].dataset.id
     $(`a[data-id='${linkId}']`).on('click', function(e) {
@@ -45,6 +39,5 @@ function loadPiece(id){
     </div>
     `
     $('#contentDiv').empty().append(newContent)
-    debugger;
   })
 }
