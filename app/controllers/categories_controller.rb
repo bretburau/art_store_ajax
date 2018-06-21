@@ -15,7 +15,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)
+    binding.pry
+    @category = Category.find_or_create_by(name: category_params[:name])
     @category.save
     render json: @category, status: 201
   end

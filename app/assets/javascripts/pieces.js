@@ -70,7 +70,8 @@ function addFormSubmitListener(pieceId) {
     let values = $(this).serialize();
     let posting = $.post('/categories', values)
     posting.done(function(data){
-      let newCategory = new Category(data.name)
+      console.log(data)
+      let newCategory = new Category(data.name, data.id)
       $('#categories').append(`<li>${newCategory.capitalize()}</li>`)
     })
   })
