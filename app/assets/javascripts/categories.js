@@ -52,4 +52,8 @@ class Category {
   constructor(name) {
     this.name = name;
   }
+
+  capitalize() {
+    return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+  }
 }

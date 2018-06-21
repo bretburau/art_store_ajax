@@ -67,14 +67,14 @@ function loadPiece(id){
 function addFormSubmitListener() {
   $('form').submit(function(e){
     e.preventDefault();
-    // debugger;
     let values = $(this).serialize();
-    let valuesAsArr = $(this).serializeArray()
-    let newCategory = new Category(valuesAsArr[0]['value']) 
-    console.log(newCategory)
-    // let posting = $.post('/categories', values)
-    // posting.done(function(data){
-      // $('#categories').append(`<li>${data.name}</li>`)
-    // })
+    // let valuesAsArr = $(this).serializeArray()
+    // const newCategory = new Category(valuesAsArr[0]['value']) 
+    // console.log(newCategory.capitalize())
+    let posting = $.post('/categories', values)
+    posting.done(function(data){
+      let newCategory = new Category(data.name)
+      $('#categories').append(`<li>${newCategory.capitalize()}</li>`)
+    })
   })
 }
