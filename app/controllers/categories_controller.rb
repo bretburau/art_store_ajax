@@ -15,8 +15,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    binding.pry
     @category = Category.find_or_create_by(name: category_params[:name])
+    Piece.find(category_params[:piece_id]).categories << @category #Associating category with piece from show page
     @category.save
     render json: @category, status: 201
   end
@@ -42,6 +42,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :piece_id)
   end
 end
