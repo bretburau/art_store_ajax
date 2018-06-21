@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     if @user.is_artist?
       redirect_to artist_path(@user)
     else
-      redirect_to user_path(@user)
+      redirect_to home_path
     end
   end
 

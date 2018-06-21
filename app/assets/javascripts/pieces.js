@@ -60,17 +60,14 @@ function loadPiece(id){
       </form>
     `
     $('#contentDiv').empty().append(newContent)
-    addFormSubmitListener();
+    addFormSubmitListener(id);
   })
 }
 
-function addFormSubmitListener() {
+function addFormSubmitListener(pieceId) {
   $('form').submit(function(e){
     e.preventDefault();
     let values = $(this).serialize();
-    // let valuesAsArr = $(this).serializeArray()
-    // const newCategory = new Category(valuesAsArr[0]['value']) 
-    // console.log(newCategory.capitalize())
     let posting = $.post('/categories', values)
     posting.done(function(data){
       let newCategory = new Category(data.name)
