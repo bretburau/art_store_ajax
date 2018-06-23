@@ -10,7 +10,6 @@ function loadArtists(e){
 }
 
 function displayArtists(artists) {
-  console.log(artists)
   newContent = `<h2>Artists:</h2><ul>`
   artists.forEach((artist) => {
     newContent += `<li><a class='btn btn-secondary' data-id='${artist.id}' href='#'>${artist.name}</a></li>`
@@ -44,8 +43,20 @@ function displayArtist(artist) {
     artist.pieces.forEach(function(piece){
       newContent += `<li><a class='btn btn-secondary' data-id='${piece.id}' onclick='loadPiece(${piece.id})' href='#'>${piece.name}</a></li>`
     })
-    newContent += '</ul>'
+    newContent += `</ul><h2>Categories ${artist.name} is tagged in</h2><ul>`
+    let uniqCategories = new Set(artist.categories.map(e => JSON.stringify(e))); // Removes duplicates from category array
+    artist.categories.forEach(function(category){
+      newContent += `<li>${category.name}</li>`
+    })
+    newContent += `</ul>`
   }
+  // debugger;
   $('#contentDiv').empty().append(newContent)
   addListenersToPieces();
 }
+
+// function uniqueArray(arrArg){
+//   return arrArg.filter((elem, pos, arr) => {
+//     return arr.indexOf(elem) == pos;
+//   });
+// }
