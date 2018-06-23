@@ -45,12 +45,13 @@ function displayArtist(artist) {
     })
     newContent += `</ul><h2>Categories ${artist.name} is tagged in</h2><ul>`
     let uniqCategories = new Set(artist.categories.map(e => JSON.stringify(e))); // Removes duplicates from category array
-    artist.categories.forEach(function(category){
+    var res = Array.from(uniqCategories).map(e => JSON.parse(e)); // Turns de-duped set to array
+    res.forEach(function(category){
       newContent += `<li>${category.name}</li>`
     })
     newContent += `</ul>`
   }
-  // debugger;
+  debugger;
   $('#contentDiv').empty().append(newContent)
   addListenersToPieces();
 }
