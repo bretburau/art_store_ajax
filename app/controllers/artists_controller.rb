@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :get_artist, only: [:show, :reports]
+  before_action :get_artist, only: [:show, :reports, :cp]
 
   def show
     render json: @artist, status: 200
@@ -11,6 +11,10 @@ class ArtistsController < ApplicationController
 
   def index
     render json: Artist.all
+  end
+
+  def cp
+    render :show
   end
 
 

@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to artist_path(@user) if @user.is_artist?
+    redirect_to artist_cp_path(@user) if @user.is_artist?
   end
 
   def destroy

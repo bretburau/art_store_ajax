@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users 
   resources :line_items, only: [:create]
   get '/artists/:id/reports', to: 'artists#reports', as: 'artist_reports'
+  get '/artists/:id/cp', to: 'artists#cp', as: 'artist_cp'
+
   resources :artists do 
     resources :pieces, only: [:show, :index, :new]
   end
