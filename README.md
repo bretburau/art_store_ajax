@@ -21,7 +21,6 @@ https://www.devmynd.com/blog/rails-local-development-https-using-self-signed-ssl
 ## Usage
 
 Navigate your browser to your localhost server, probably on localhost:3000. The home page displays all of the art pieces currently available. On the left side of the navigation bar are links to display the different artists, categores, and art pieces.
-By creating a user and logging in you can add items to a shopping cart and check out. This doesn't currently actually order anything, but the functionality is there.
 If you set your user to be an 'Artist' either during creation or on the edit user page, you can add new pieces to your library. Navigate to your profile and there's an "Upload a new image." This will let you create a new piece. The "View Reports" button on this page displays a report of the most valuable shopping cart containing your items.
 
 ## Contributing
