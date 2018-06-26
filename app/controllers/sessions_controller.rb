@@ -12,11 +12,7 @@ class SessionsController < ApplicationController
     end
     session[:user_id] = @user.id
     @user.current_cart ||= @user.carts.build #left in for nil protection
-    if @user.is_artist?
-      redirect_to home_path
-    else
-      redirect_to home_path
-    end
+    redirect_to root_path
   end
 
   def destroy
