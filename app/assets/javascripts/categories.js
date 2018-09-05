@@ -2,7 +2,7 @@
     $('#categories-link').on('click', loadCategoires)
   });
 
-let newContent; //Why is this here? TODO
+//let newContent; //Why is this here? TODO
 
 function loadCategoires(e){
   e.preventDefault()
@@ -10,7 +10,7 @@ function loadCategoires(e){
 }
 
 function displayCategories(categories) {
-  newContent = `<h2>Categories:</h2><ul>`
+  let newContent = `<h2>Categories:</h2><ul>`
   categories.forEach((category) => {
     newContent += `<li><a class='btn btn-secondary' data-id='${category.id}' href='#'>${category.name}</a></li>`
   });
@@ -34,7 +34,7 @@ function loadCategory(id) {
 }
 
 function displayCategory(category) {
-  newContent = `<h2>Pieces in category ${category.name}</h2>`
+  let newContent = `<h2>Pieces in category ${category.name}</h2>`
   if(category.pieces.length === 0) {
     newContent += `<p>No pieces in the category yet...</p>`
   } else {

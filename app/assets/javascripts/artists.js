@@ -10,7 +10,7 @@ function loadArtists(e){
 }
 
 function displayArtists(artists) {
-  newContent = `<h2>Artists:</h2><ul>`
+  let newContent = `<h2>Artists:</h2><ul>`
   artists.forEach((artist) => {
     newContent += `<li><a class='btn btn-secondary' data-id='${artist.id}' href='#'>${artist.name}</a></li>`
     // TODO profile/artists gallery links?
@@ -35,7 +35,7 @@ function loadArtist(id) {
 }
 
 function displayArtist(artist) {
-  newContent = `<h2>Pieces by artist ${artist.name}</h2>`
+  let newContent = `<h2>Pieces by artist ${artist.name}</h2>`
   if(artist.pieces.length === 0) {
     newContent += `<p>No pieces from this artist yet...</p>`
   } else {
@@ -55,9 +55,3 @@ function displayArtist(artist) {
   $('#contentDiv').empty().append(newContent)
   addListenersToPieces();
 }
-
-// function uniqueArray(arrArg){
-//   return arrArg.filter((elem, pos, arr) => {
-//     return arr.indexOf(elem) == pos;
-//   });
-// }
